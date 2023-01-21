@@ -1,0 +1,8 @@
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\bin\Debug\Lama_PE01.exe.config
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\bin\Debug\Lama_PE01.exe
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\bin\Debug\Lama_PE01.pdb
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\obj\Debug\Lama_PE01.csproj.AssemblyReference.cache
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\obj\Debug\Lama_PE01.csproj.SuggestedBindingRedirects.cache
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\obj\Debug\Lama_PE01.csproj.CoreCompileInputs.cache
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\obj\Debug\Lama_PE01.exe
+C:\Users\scrib\source\repos\mkl1328\myIGME-201\Lama_PE01\obj\Debug\Lama_PE01.pdb
