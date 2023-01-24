@@ -49,10 +49,10 @@ namespace FavoriteColorAndNumber
 
             // Prompt user for favorite number
             Console.Write("Enter your favorite number:\t");
-            
+
             // Check for int input
+
             
-            /*
             do
             {
 
@@ -68,13 +68,14 @@ namespace FavoriteColorAndNumber
                     Console.WriteLine("Please enter an integer.");
                 }
             } while(npFavNum == null);
-            */
+            
 
-            if (int.TryParse(sFavNum, out nFavNum)) nFavNum = int.Parse(sFavNum);
+            //Only works once -- 
+            //    if (int.TryParse(sFavNum, out nFavNum)) nFavNum = int.Parse(sFavNum);
 
             // Change text to match their color
 
-            switch(CAlias.ColorClass.sFavColor.ToLower())
+            switch (CAlias.ColorClass.sFavColor.ToLower())
             {
                 case "red":
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -102,7 +103,7 @@ namespace FavoriteColorAndNumber
 
             //Diff string output:
             //String appending -    ("..." + var)
-            //String Embedding -    ($"... + ()")
+            //String Embedding -    ($"... + {}")
             //String substitution - ("... {0}", var)
 
         }
