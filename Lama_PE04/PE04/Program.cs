@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace PE04
 {
+    // Class: Program
+    // Author: Max Lama
+    // Purpose: Record 2 number inputs and check if only one of them is greater than 10
+    // Restrictions: None
     internal class Program
     {
+        // Method: Main
+        // Author: Max Lama
+        // Purpose: Same as program
+        // Restrictions: None
         static void Main(string[] args)
         {
             // Make vars for number values
