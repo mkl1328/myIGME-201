@@ -8,15 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace PE07
 {
+    // Author: Max Lama
+    // Purpose: Handle the input and output for a mad lib game
+    // Restrictions: None
     internal class Program
     {
+        // Purpose: Run the mad lib game
+        // Restrictions: None
         static void Main(string[] args)
         {
             StreamReader input = null;
             string resultString = "";
             //List<string> words = new List<string>();
 
-            if(!ask("Do you want to play Mad Libs?")) Environment.Exit(1);
+            if (!Ask("Do you want to play Mad Libs?"))
+            {
+                Environment.Exit(1);
+            }
 
             Console.WriteLine("What's your name?");
             string userName = Console.ReadLine().Trim();
@@ -32,13 +40,13 @@ namespace PE07
                 try
                 {
                     input = new StreamReader("..\\..\\txt\\MadLibsTemplate.txt");
-                    int numOfStories = howManyStories(input);
+                    int numOfStories = HowManyStories(input);
                     input.Close();
 
                     input = new StreamReader("..\\..\\txt\\MadLibsTemplate.txt");
-                    string[] words = selectStory(input, numOfStories).Split(' ');
+                    string[] words = SelectStory(input, numOfStories).Split(' ');
 
-                    resultString = playGame(words);
+                    resultString = PlayGame(words);
                 }
                 catch (Exception e)
                 {
@@ -55,13 +63,19 @@ namespace PE07
                 Console.WriteLine($"Good Job, {userName}! This is the story you made:");
                 Console.WriteLine(resultString);
 
-                if (!ask("Do you want to play again?")) break;
+                if (!Ask("Do you want to play again?"))
+                {
+                    break;
+                }
             }
-            Console.Write(" Thanks for playing!");
+            Console.WriteLine(" Thanks for playing!");
         }
 
-        //Start game thing. (step 9)
-        static bool ask(string question)
+        // Purpose: Ask a yes or no question and handle data validation
+        // Restrictions: Has hard-coded 3-time and 10-time error messages.
+        // @param: <string> question -  what question to ask;
+        // @return: <bool> - answer to the question.
+        static bool Ask(string question)
         {
             bool keepLooping = true;
             int counter = 1;
@@ -84,7 +98,7 @@ namespace PE07
                         keepLooping = false;
                         return true;
                     case "no":
-                        Console.WriteLine(":( Okay, Goodbye.");
+                        Console.WriteLine("Okay, Goodbye.");
                         keepLooping = false;
                         break;
                 }
@@ -92,8 +106,11 @@ namespace PE07
             return false;
         }
 
-        //Determines how many stories (lines) are in the text file
-        static int howManyStories(StreamReader input)
+        // Purpose: To figure out how many stories are in the document
+        // Restrictions: Stories must be split up by line in the txt document
+        // @param: <StreamReader> - the strem to read from. 
+        // @return: <int> - how many stories are in the document (lines)
+        static int HowManyStories(StreamReader input)
         {
             int count = 0;
             string line = null;
@@ -103,8 +120,13 @@ namespace PE07
             };
             return count;
         }
-        // Takes user input and determines the story to use.
-        static string selectStory(StreamReader input, int numOfStories)
+
+        // Purpose: Select a story based on the user's input
+        // Restrictions: None
+        // @param: <StreamReader> input - stream to read from
+        // @param: <int> numOfStories - How many stories there are in the doc
+        // @return: <string> - The selected story in string value
+        static string SelectStory(StreamReader input, int numOfStories)
         {
             int pickedStory;
             while (true)
@@ -134,8 +156,11 @@ namespace PE07
             return story;
         }
         
-        //Loop for gameplay
-        static string playGame(string[] words)
+        // Purpose: Loop through the story's word array to create the madlib.
+        // Restriction: If the story has any escape characters besides \n, they will be ignored, and replaced with a line break.
+        // @param: <string[]> words - Word array of words in the story.
+        // @return: <string> - Concatenated story.
+        static string PlayGame(string[] words)
         {
             string result = "";
 
@@ -144,20 +169,24 @@ namespace PE07
                 switch (word[0])
                 {
                     default: result += $"{word} "; break;
-                    case '\\' : result += "\n"; break;
-                    case '{' : result += $"{promptUser(word)} "; break;
+                    case '\\' : result += "\n"; break;                      // Would have to change this case to accomodate other escape characters.
+                    case '{' : result += $"{PromptUser(word)} "; break;
                 }
             }
 
             return result;
         }
 
-        //Gives prompts and Acquires responses
-        static string promptUser(string prompt)
+        // Purpose: Prompt and Get user input for the mad lib word
+        // Restrictions: If there are other punctuation marks not accounted for like ":", "$", ";", ")" etc, the formating breaks.
+        //               The use still works, it just looks messy when prompting.
+        // @param: <string> prompt - Word in {} in the story
+        // @return: <string> - User's input.
+        static string PromptUser(string prompt)
         {
-            bool hasComma = false;
-            if (prompt.Contains(',')) hasComma = true;
-            char[] charsToTrim = {',', '{', '}'};
+            char punctuation = prompt[prompt.Length - 1];           //Punctuation marks aren't separated from prompt words since 
+                                                                    // there is no space between them and the prompt closing bracket.
+            char[] charsToTrim = {'?', '!', '.', ',', '{', '}'};
             prompt = prompt.Replace('_', ' ');
             prompt = prompt.Trim(charsToTrim);
 
@@ -166,11 +195,20 @@ namespace PE07
             {
                 Console.Write($"Please enter a {prompt}: ");
                 response = Console.ReadLine().Trim();
-                if (response == "") Console.WriteLine("Give me a real Answer!");
-                else break;
+                if (response == "")
+                {
+                    Console.WriteLine("Give me a real Answer!");
+                }
+                else
+                {
+                    break;
+                }
             }
-      
-            if (hasComma) response += ",";
+
+            if (punctuation != '}')
+            {
+                response += punctuation;
+            }
             return response;
 
         }
