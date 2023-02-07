@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace PE08_q5
 {
+    // Author: Max Lama
+    // Class: Program
+    // Purpose: calculate an equation and store the values in a 3D array
+    // Restrictions: x and y limits are hard coded
     internal class Program
     {
+        // Author: Max Lama
+        // Purpose: same as program.
         static void Main(string[] args)
         {
             double x;
