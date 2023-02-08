@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace PE08_q8
 {
+    // Author: Max Lama
+    // Class: Program
+    // Purpose: replace all instances of the word "no" with the word "yes"
+    // Restrictions: - Case is not preserved (ex: No -> yes).
+    //               - Adding other marks not included in char array "Chars to trim
+    //                 can mess up "no" detection.
     internal class Program
     {
+        // Purpose: same as program
+        // Restriciton: same as program
         static void Main(string[] args)
         {
             // -= PLAIN ENGLISH LOGIC =-
