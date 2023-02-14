@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace PE06
 {
+    // Class: Program
+    // Author: Max Lama
+    // Purpose: Parsing and Formatting
+    // Restrictions: None
     internal class Program
     {
+
+        // Method: Main
+        // Purpose: Number guessing Game
+        // Restrictions: None
         static void Main(string[] args)
         {
 
@@ -18,9 +26,6 @@ namespace PE06
 
             // generate a random number between 0 inclusive and 101 exclusive
             int randomNumber = rand.Next(0, 101);
-
-            //FOR DEBUG! - REMOVE FOR FINAL
-            Console.WriteLine(randomNumber);
 
             // Give the user 8 tries to guess the number
 
