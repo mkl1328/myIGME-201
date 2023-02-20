@@ -1,6 +1,14 @@
 ﻿using System.IO;
 using System;
 
+// --Edited-- by Max Lama
+//      Changes:
+//          - Updated val1 and val2 to doubles
+//          - Changed all nResponse and nAnswer to double dResponse and double dAnswer respectively.
+//          - changed random nOp to range from 0 to 4 exclusive
+//          - updated else to else if (nOp == 2) and added a 4th case for division.
+//
+
 class Program
 {
     static void Main()
