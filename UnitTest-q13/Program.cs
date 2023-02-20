@@ -41,7 +41,7 @@ namespace UnitTest_q13
         }
 
         // Method: GiveRaise
-        // Purpose: Check if name == Max Lama, if so - give a raise, and return true
+        // Purpose: Check if name == Max Lama, if so - return true
         // @param {employee} emp - struct of employee info
         // @return {bool} wether or not the user got a raise
         static bool GiveRaise(employee emp)
