@@ -16,6 +16,7 @@ namespace UnitTest_q13
         {
             public string sName;
             public double dSalary;
+
         }
 
         // Method: Main
@@ -27,10 +28,10 @@ namespace UnitTest_q13
             employee emp = new employee();
             emp.dSalary = 30000;
             emp.sName = Console.ReadLine();
-
             bool gotARaise = GiveRaise(emp);
             if (gotARaise)
             {
+                emp.dSalary += 19999.99;
                 Console.WriteLine($"Congratulations on the raise!\nYour new salary is: {emp.dSalary}");
             }
             else
@@ -45,15 +46,7 @@ namespace UnitTest_q13
         // @return {bool} wether or not the user got a raise
         static bool GiveRaise(employee emp)
         {
-            if (emp.sName == "Max Lama")
-            {
-                emp.dSalary = 49999.99;
-                return true;
-            } 
-            else
-            {
-                emp.dSalary = 30000;
-            }
+            if (emp.sName == "Max Lama") return true;
             return false;
         }
     }
