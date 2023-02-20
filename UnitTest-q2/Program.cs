@@ -2,10 +2,13 @@
 
 namespace NumberSort
 {
-    // Class: Program
-    // Author: UPDATED by Max Lama
-    // Purpose: Question 2
-    // Restrictions: None
+    // --Edited-- by Max Lama
+    //      Changes:
+    //          - Updated all instances of Number to Word in sNumber, sNumbers, and sThisNumber
+    //          - Changed data validation to check if the first character is a letter instead of parsing string to numbers
+    //          - Changed sorting functions to return strings and accept string arrays
+    //          - Changed sorting functions if operations to use .CompareTo();
+    //
     class Program
     {
         // the definition of the delegate function data type
