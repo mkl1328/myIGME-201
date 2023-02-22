@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PE11-q5")]
+[assembly: AssemblyTitle("Vehicles")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PE11-q5")]
+[assembly: AssemblyProduct("Vehicles")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c109473e-d02d-4425-8e3e-6c3217cf8aa6")]
+[assembly: Guid("df8ccce9-214a-40f7-8f2a-72276d48571e")]
 
 // Version information for an assembly consists of the following four values:
 //
