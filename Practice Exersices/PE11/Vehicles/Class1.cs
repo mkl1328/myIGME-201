@@ -4,8 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vehicles
+namespace Vehicle
 {
+    public interface IPassengerCarrier
+    {
+        void LoadPassenger();
+    }
+    public interface IHeavyLoadCarrier
+    {
+
+    }
+
     public abstract class Vehicle
     {
         public virtual void LoadPassenger() { }
@@ -17,15 +26,6 @@ namespace Vehicles
     }
 
     public abstract class Train : Vehicle
-    {
-
-    }
-
-    public interface IPassengerCarrier
-    {
-        void LoadPassenger();
-    }
-    public interface IHeavyLoadCarrier
     {
 
     }
