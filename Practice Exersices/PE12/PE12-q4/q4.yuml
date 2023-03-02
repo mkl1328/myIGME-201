@@ -1,0 +1,11 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+// MyClass
+[+MyClass|-myString:string|+MyString:string:w; +GetString():string:v|]
+
+// MyDerivedClass
+[+MyDerivedClass||+GetString():string:o|]
+
+[+MyClass]<-[+MyDerivedClass]
