@@ -121,6 +121,25 @@ namespace PeopleApp
                                 // gpa only belongs to Student, so we need a Student reference variable to output that
                                 Student student = (Student)thisPerson;
                                 Console.WriteLine($"{student.gpa}");
+
+                                //Courses
+                                //foreach(Course course in student.courseCodes)
+                                //{
+                                //    Console.Write($"{courses.schedule.startTime:hh:mmtt}");
+                                //}
+
+                                //foreach(KeyValuePair<string, Course> courseName in courses.sortedList)
+                                foreach(string courseName in student.courseCodes)
+                                {
+                                    //Course thisCourse = (Course)courses.sortedList<courseName>.Value;
+                                    Course thisCourse = courses[courseName];
+                                    Console.Write($"{thisCourse.courseCode}: {thisCourse.description} ");
+                                    foreach(DayOfWeek day in thisCourse.schedule.daysOfWeek)
+                                    {
+                                        Console.Write($"{day} ");
+                                    }
+                                    Console.WriteLine($"{thisCourse.schedule.startTime:hh:mmtt}");
+                                }
                             }
 
                             if (thisPerson.GetType() == typeof(Teacher))
