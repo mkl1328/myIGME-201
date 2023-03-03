@@ -143,6 +143,10 @@ namespace PetApp
         }
     }
 
+    // Author: Max Lama
+    // Class: Pets
+    // Purpose: Parent List of pet objects
+    // Restrictions: None
     public class Pets
     {
         public List<Pet> petList = new List<Pet>();
@@ -208,6 +212,10 @@ namespace PetApp
 
     }
 
+    // Author: Max Lama
+    // Class: Pet
+    // Purpose: Parent class for all types of pets
+    // Restrictions None
     public abstract class Pet
     {
         private string name;
@@ -234,6 +242,10 @@ namespace PetApp
         }
     }
 
+    // Author: Max Lama
+    // Interface: IDog
+    // Purpose: Interface to Dog class (call methods)
+    // Restrictions: None
     public interface IDog
     {
         void Eat();
@@ -243,6 +255,10 @@ namespace PetApp
         void GotoVet();
     }
 
+    // Author: Max Lama
+    // Interface: ICat
+    // Purpose: Interface to Cat class (call methods)
+    // Restrictions: None
     public interface ICat
     {
         void Eat();
@@ -252,6 +268,10 @@ namespace PetApp
         void GotoVet();     // This isn't in the YUML doc, but I don't know how to access it otherwise..
     }
 
+    // Author: Max Lama
+    // Class: Dog
+    // Purpose: Dog type Pet with all of personalized functions
+    // Restrictions: None
     public class Dog : Pet, IDog
     {
         public string license;
@@ -286,6 +306,11 @@ namespace PetApp
             license= szLicense;
         }
     }
+
+    // Author: Max Lama
+    // Class: Cat
+    // Purpose: Cat type Pet with all of personalized functions
+    // Restrictions: None
     public class Cat : Pet , ICat
     {
         public override void Eat()
