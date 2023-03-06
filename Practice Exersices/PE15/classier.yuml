@@ -1,0 +1,19 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+// ICustomer interface
+[+I:ICustomer|Greet()]
+
+//Customer Class
+[+Customer|+name:string;-creditCardNumber:string|CreditCardNumber:string:w;Greet()|]
+
+//Hotdrink Class
+[+A:HotDrink|+instant:bool;+milk:bool;-sugar:byte;+brand:string;+size:string;+customer:Customer|+AddSugar(amount:byte):v;+Steam:a|+();+(brand:string)]
+
+//CupOfCoffee Class
+[+CupOfCoffee|+beanType:string|+Steam():o|+();+(brand:string):base(brand)]
+
+[+CupOfCoffee]<-.-[+A:HotDrink]
+[+I:ICustomer]^[+Customer]
+[+Customer]1-0..[+CupOfCoffee]
