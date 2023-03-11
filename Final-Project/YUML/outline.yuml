@@ -1,0 +1,47 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+// Team 2 Project: Redbarn Companion
+// Members: Max, Amrit, Chloe, Josh
+// YUML Draft 1
+
+//-week:SortedList<DayOfWeek,string> | Day, open and close concatenated
+[+Hours|-week:SortedList<DayOfWeek,string>;+Week:SortedList<DayOfWeek,string>:r|+EditHours(day:DayOfWeek,open:string,close:string)|()]
+[+Occupancy|-maxPpl:int,+currentOccupancy:int;+MaxPpl:int:r||(maxPpl:int)]
+
+// Not sure if I need the interface since there will only be one "Events" obj
+// [+I:IEvents|AddEvent();EditEvent();RemoveEvent()]
+// events:SortedList<string,Event> | date, event
+[+Events|events:SortedList<string,Event>|+AddEvent(name:string,date:string,startTime:string,endTime:string);+EditEvent(name:string,date:string,startTime:string,endTime:string);+RemoveEvent(name:string)|]
+[+Event|+name:string;+date:string;+startTime:string;+endTime:string||();(name:string,date:string,startTime:string,endTime:string)]
+
+// The second string in the setSchedule Sorted List is a date (Maybe theres a data type for that?)
+[+Map|-floor:int;+Floor:int:r;+walls:SortedList<string:Wall>;+setSchedule:SortedList<string,string>;||()]
+
+[+Wall|-name:string;+Name:string:r;+climbs:SortedList<string:Climb>||()]
+[+Climb|-name:string;-grade:int;+Name:string:r;+Grade:int:r||();(name:string,grade:string)]
+
+[+Profile|+name:string;+height:int;+email:string;personalStats:Stats||()]
+// +sessionToday:SortedList<int,int> | Grade, number of sends
+// +allTime:SortedList<int,int> | Day of week, number of climbs that day
+// +allClimbs:SortedList<string:PersonalClimbStats> | Name of climb, stat obj
+[+I:IStats|+AddClimb()]
+[+Stats|+sessionToday:SortedList<int,int>;+allTime:SortedList<int,int>;+allClimbs:SortedList<string:PersonalClimbStats>;+calendar:SortedList<DayOfWeek,int>|+AddClimb(sent:bool);+Attempt(climbName:string)|()]
+[+I:IPersonalClimbStats|AddSend();AddAttempt()]
+[+PersonalClimbStats|-name:string;-grade:int;-sends:int;-attempts:int;+Name:string:r;+Grade:int:r;+Sends:int;+Attempts:int|+AddSend(date:string);+AddAttempt(date:string)|()]
+
+
+//Connections
+
+[+Events]1-..0[+Event]
+// [+I:IEvents]<-.-[+Events]
+
+[+Map]1-..0[+Wall]
+[+Wall]1-..0[+Climb]
+
+[+Profile]<-[+Stats]
+[+I:IStats]<-.-[+Stats]
+[+Stats]1-..0[+PersonalClimbStats]
+[+Climb]<-[+PersonalClimbStats]
+[+I:IPersonalClimbStats]<-.-[+PersonalClimbStats]
