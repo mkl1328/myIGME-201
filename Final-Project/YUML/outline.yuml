@@ -29,7 +29,7 @@
 [+I:IStats|+AddClimb()]
 [+Stats|+sessionToday:SortedList<int,int>;+allTime:SortedList<int,int>;+allClimbs:SortedList<string:PersonalClimbStats>;+calendar:SortedList<DayOfWeek,int>|+AddClimb(sent:bool);+Attempt(climbName:string)|()]
 [+I:IPersonalClimbStats|AddSend();AddAttempt()]
-[+PersonalClimbStats|-name:string;-grade:int;-sends:int;-attempts:int;+Name:string:r;+Grade:int:r;+Sends:int;+Attempts:int|+AddSend(date:string);+AddAttempt(date:string)|()]
+[+PersonalClimbStats|-name:string;-grade:int;-sends:int;-attempts:int;-flash:bool;+Name:string:r;+Grade:int:r;+Sends:int;+Attempts:int|+AddSend(date:string);+AddAttempt(date:string)|()]
 
 
 //Connections
