@@ -3,7 +3,7 @@
 // {direction:topDown}
 
 // hobby: Drawing
-[+A:Tool|+type:string;+strokeWeight:int;-fullness:double|+Fullness:r;+Refill(amount:double):double:v;+PickUp():a;+PutDown:a|]
+[+A:Tool|+type:string;+strokeWeight:int;-fullness:double|+Fullness:r;+Refill(amount:double):double:v;+PickUp():a;+PutDown:a|(type:string,strokeWeight:int)]
 
 [+BrushPen|+color:string|+Paint(picture:string);+Draw(doodle:string);+Pickup():o;+PutDown():o|+(type:string,strokeWeight:int,color:string):base(type,strokeWeight)]
 
