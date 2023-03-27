@@ -1,0 +1,24 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+// hobby: Drawing
+[+A:Tool|+type:string;+strokeWeight:int;-fullness:double|+Fullness:r;+Refill(amount:double):double:v;+PickUp():a;+PutDown:a|]
+
+[+BrushPen|+color:string|+Paint(picture:string);+Draw(doodle:string);+Pickup():o;+PutDown():o|+(type:string,strokeWeight:int,color:string):base(type,strokeWeight)]
+
+[+Pencil|+hardness:string|+Draw(doodle:string);+Pickup():o;+PutDown():o|+(type:string,strokeWeight:int,hardness:string):base(type,strokeWeight)]
+
+[+PaintBrush|+shape:string|+Paint(picture:string);+Pickup():o;+PutDown():o|+(type:string,strokeWeight:int,shape:string):base(type,strokeWeight)]
+
+[+I:IDrawTool|+Draw()]
+[+I:IPaintTool|+Paint()]
+
+[+I:IDrawTool]^[+Pencil]
+[+I:IDrawTool]^[+BrushPen]
+[+I:IPaintTool]^[+BrushPen]
+[+I:IPaintTool]^[+PaintBrush]
+
+[+A:Tool]<-.-[+BrushPen]
+[+A:Tool]<-.-[+Pencil]
+[+A:Tool]<-.-[+PaintBrush]
