@@ -41,7 +41,7 @@
 [+Wall]1-..0[+Climb]
 
 [+Profile]<-[+Stats]
-[+I:IStats]<-.-[+Stats]
+[+I:IStats]^[+Stats]
 [+Stats]1-..0[+PersonalClimbStats]
 [+Climb]<-[+PersonalClimbStats]
-[+I:IPersonalClimbStats]<-.-[+PersonalClimbStats]
+[+I:IPersonalClimbStats]^[+PersonalClimbStats]
