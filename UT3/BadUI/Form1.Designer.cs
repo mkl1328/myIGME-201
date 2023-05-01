@@ -1,6 +1,6 @@
 ﻿namespace BadUI
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Required designer variable.
@@ -339,16 +339,18 @@
             this.toolStripMenuItem272 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem273 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem274 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resultLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // greenButton
             // 
             this.greenButton.BackColor = System.Drawing.Color.GreenYellow;
-            this.greenButton.Location = new System.Drawing.Point(277, 307);
+            this.greenButton.Location = new System.Drawing.Point(209, 313);
             this.greenButton.Name = "greenButton";
-            this.greenButton.Size = new System.Drawing.Size(64, 68);
+            this.greenButton.Size = new System.Drawing.Size(157, 68);
             this.greenButton.TabIndex = 0;
+            this.greenButton.Text = "Submit!";
             this.greenButton.UseVisualStyleBackColor = false;
             // 
             // textBox1
@@ -394,7 +396,7 @@
             this.whatAreYouDoingToolStripMenuItem,
             this.youTotallyDidntListenToolStripMenuItem});
             this.notHereToolStripMenuItem.Name = "notHereToolStripMenuItem";
-            this.notHereToolStripMenuItem.Size = new System.Drawing.Size(156, 32);
+            this.notHereToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.notHereToolStripMenuItem.Text = "Not Here";
             // 
             // whatAreYouDoingToolStripMenuItem
@@ -536,7 +538,7 @@
             this.notHereToolStripMenuItem6,
             this.notHereToolStripMenuItem7});
             this.hereToolStripMenuItem.Name = "hereToolStripMenuItem";
-            this.hereToolStripMenuItem.Size = new System.Drawing.Size(156, 32);
+            this.hereToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.hereToolStripMenuItem.Text = "Here";
             // 
             // notHereToolStripMenuItem1
@@ -606,7 +608,7 @@
             this.toolStripMenuItem7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitProgramToolStripMenuItem});
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(156, 32);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(240, 32);
             this.toolStripMenuItem7.Text = "?";
             // 
             // exitProgramToolStripMenuItem
@@ -2691,17 +2693,27 @@
             this.toolStripMenuItem274.Size = new System.Drawing.Size(270, 34);
             this.toolStripMenuItem274.Text = ".";
             // 
-            // Form1
+            // resultLabel
+            // 
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Location = new System.Drawing.Point(157, 226);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(95, 20);
+            this.resultLabel.TabIndex = 5;
+            this.resultLabel.Text = "You did it, !!!";
+            // 
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 606);
+            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.greenButton);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Form";
+            this.Text = "Enter Your Name!";
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3020,6 +3032,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem205;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem200;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem206;
+        private System.Windows.Forms.Label resultLabel;
     }
 }
 
